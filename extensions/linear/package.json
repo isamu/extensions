@@ -222,6 +222,44 @@
       "mode": "view"
     }
   ],
+  "tools": [
+    {
+      "title": "Linear Project Updates",
+      "name": "project-updates",
+      "description": "Get the latest project updates.",
+      "mode": "no-view",
+      "sideEffects": false,
+      "output": {
+        "type": "array",
+        "description": "the project updates",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "the unique id of the update type"
+            },
+            "title": {
+              "type": "string",
+              "description": "the title of the update type"
+            },
+            "content": {
+              "type": "function",
+              "returns": {
+                "type": "string"
+              },
+              "description": "the content of the update type"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "content"
+          ]
+        }
+      }
+    }
+  ],
   "preferences": [
     {
       "name": "issueCustomCopyAction",

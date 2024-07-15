@@ -108,6 +108,48 @@
       "description": "Choose where to open Notion page."
     }
   ],
+  "tools": [
+    {
+      "title": "Search Notion Page",
+      "name": "search-notion-page",
+      "description": "Search a page in Notion.",
+      "mode": "no-view",
+      "sideEffects": false,
+      "input": {
+        "type": "string",
+        "description": "the term to search for in Notion"
+      },
+      "output": {
+        "type": "array",
+        "description": "the Notion pages",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "the page's id"
+            },
+            "title": {
+              "type": "string",
+              "description": "the page's title"
+            },
+            "content": {
+              "type": "function",
+              "returns": {
+                "type": "string"
+              },
+              "description": "the page's content"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "content"
+          ]
+        }
+      }
+    }
+  ],
   "dependencies": {
     "@mozilla/readability": "^0.5.0",
     "@notionhq/client": "^2.2.14",

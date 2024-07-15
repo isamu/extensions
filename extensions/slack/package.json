@@ -93,6 +93,48 @@
       "default": true
     }
   ],
+  "tools": [
+    {
+      "title": "Slack Channels",
+      "name": "channel",
+      "description": "Get the latest Slack channel.",
+      "mode": "no-view",
+      "sideEffects": false,
+      "input": {
+        "type": "string",
+        "description": "the term to search for in the channels"
+      },
+      "output": {
+        "type": "array",
+        "description": "the project updates",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "the unique id of the post"
+            },
+            "title": {
+              "type": "string",
+              "description": "the title of the post"
+            },
+            "content": {
+              "type": "function",
+              "returns": {
+                "type": "string"
+              },
+              "description": "the content of the post"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "content"
+          ]
+        }
+      }
+    }
+  ],
   "dependencies": {
     "@raycast/api": "^1.76.0",
     "@raycast/utils": "^1.16.0",

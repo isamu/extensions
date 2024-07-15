@@ -345,6 +345,48 @@
       ]
     }
   ],
+  "tools": [
+    {
+      "title": "Search Pull Requests",
+      "name": "search-pull-requests",
+      "description": "Search in pull requests.",
+      "mode": "no-view",
+      "sideEffects": false,
+      "input": {
+        "type": "string",
+        "description": "the term to search for in the pull requests"
+      },
+      "output": {
+        "type": "array",
+        "description": "the pull requests",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "the pull request's id"
+            },
+            "title": {
+              "type": "string",
+              "description": "the pull requests's title"
+            },
+            "content": {
+              "type": "function",
+              "returns": {
+                "type": "string"
+              },
+              "description": "the pull request's content"
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "content"
+          ]
+        }
+      }
+    }
+  ],
   "preferences": [
     {
       "name": "personalAccessToken",

@@ -228,6 +228,28 @@
       "mode": "no-view"
     }
   ],
+  "tools": [
+    {
+      "title": "Search Todoist Tasks",
+      "name": "search-tasks",
+      "description": "Search your Todoist tasks",
+      "mode": "no-view",
+      "sideEffects": false,
+      "output": {
+        "type": "array",
+        "description": "the Todoist tasks",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "the id"
+            }
+          }
+        }
+      }
+    }
+  ],
   "preferences": [
     {
       "name": "token",
